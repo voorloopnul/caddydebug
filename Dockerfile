@@ -1,5 +1,5 @@
-FROM ubuntu:24.04
-RUN apt-get update -y
-RUN apt-get install -y curl wget
-
-CMD ["echo", "Hey"]
+FROM caddy:latest
+RUN mkdir /app
+COPY run.sh /app
+WORKDIR /app
+CMD ["ash", "run.sh"]
